@@ -11,7 +11,7 @@ with open(os.path.join(here, "README.md")) as f:
 
 
 setup(name="simple-smatch",
-      use_scm_version=True,
+      version='0.1.3',
       setup_requires=['setuptools_scm'],
       description="Simple Smatch",
       long_description=README,
@@ -38,6 +38,6 @@ setup(name="simple-smatch",
           'Topic :: Utilities'
       ],
       keywords='nlp semantics amr evaluation',
-      py_modules=["smatch", "amr"],
-      scripts=["smatch.py"],
+      py_modules=["simplesmatch", "amr"],
+      scripts=["simplesmatch.py"],
       )
