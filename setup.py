@@ -38,6 +38,6 @@ setup(name="simple-smatch",
           'Topic :: Utilities'
       ],
       keywords='nlp semantics amr evaluation',
-      py_modules=["simplesmatch", "amr"],
-      scripts=["simplesmatch.py"],
+      py_modules=["simplesmatchscore", "amr"],
+      scripts=["simplesmatchscore.py"],
       )
