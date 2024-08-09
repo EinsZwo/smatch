@@ -10,15 +10,15 @@ with open(os.path.join(here, "README.md")) as f:
     README = f.read()
 
 
-setup(name="smatch",
+setup(name="simple-smatch",
       use_scm_version=True,
       setup_requires=['setuptools_scm'],
-      description="Smatch (semantic match) tool",
+      description="Simple Smatch",
       long_description=README,
       long_description_content_type='text/markdown',
-      author="Shu Cai",
-      author_email="shucai.work@gmail.com",
-      url="https://github.com/snowblink14/smatch",
+      author="Matt Buchholz",
+      author_email="CzechEinsZwo@gmail.com",
+      url="https://github.com/EinsZwo/smatch",
       license="MIT",
       classifiers=[
           'Development Status :: 5 - Production/Stable',
