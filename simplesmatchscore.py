@@ -660,14 +660,35 @@ def generate_amr_lines(f1, f2):
         break
 
 
+import os
+
 def amr_f1(ref, candidate):
+
+    ref_file = "__temp_amr_ref_input.txt"
+    cand_file = "__temp_amr_cand_input.txt"
+
     if type(ref) == str:
         ref = ref.split("\n")
+
+    with open(ref_file, "w+", encoding='utf-8') as outfile:
+        for line in ref:
+            outfile.write(line)
 
     if type(candidate) == str:
         candidate = candidate.split("\n")
 
-    return get_amr_match(ref, candidate)
+    with open(cand_file, "w+", encoding='utf-8') as outfile:
+        for line in candidate:
+            outfile.write(line)
+
+    with open(ref_file, "r", encoding='utf-8') as f1, open(cand_file, "r", encoding='utf-8') as f2:
+        scores = score_amr_pairs(f1, f2)
+        score_list = [f_score for (_, _, f_score) in scores]
+
+    os.remove(ref_file)
+    os.remove(cand_file)
+
+    return score_list
 
 
 def get_amr_match(cur_amr1, cur_amr2, sent_num=1, justinstance=False, justattribute=False, justrelation=False):
